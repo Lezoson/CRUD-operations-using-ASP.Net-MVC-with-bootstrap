@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\chosen\chosen-sprite%402x.png" />
+    <None Include="wwwroot\chosen\chosen-sprite.png" />
+    <None Include="wwwroot\chosen\chosen.css" />
+    <None Include="wwwroot\chosen\chosen.jquery.js" />
+    <None Include="wwwroot\chosen\chosen.jquery.min.js" />
+    <None Include="wwwroot\chosen\chosen.min.css" />
+    <None Include="wwwroot\chosen\chosen.proto.js" />
+    <None Include="wwwroot\chosen\chosen.proto.min.js" />
+    <None Include="wwwroot\chosen\docsupport\chosen.png" />
+    <None Include="wwwroot\chosen\docsupport\init.js" />
+    <None Include="wwwroot\chosen\docsupport\init.proto.js" />
+    <None Include="wwwroot\chosen\docsupport\jquery-1.12.4.min.js" />
+    <None Include="wwwroot\chosen\docsupport\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\chosen\docsupport\oss-credit.png" />
+    <None Include="wwwroot\chosen\docsupport\prism.css" />
+    <None Include="wwwroot\chosen\docsupport\prism.js" />
+    <None Include="wwwroot\chosen\docsupport\prototype-1.7.0.0.js" />
+    <None Include="wwwroot\chosen\docsupport\style.css" />
+    <None Include="wwwroot\chosen\index.html" />
+    <None Include="wwwroot\chosen\index.proto.html" />
+    <None Include="wwwroot\chosen\LICENSE.md" />
+    <None Include="wwwroot\chosen\options.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
+    <PackageReference Include="toastr" Version="2.1.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,107 @@
+﻿@model StudentsMangement.Models.StudentDetails
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Student Details</h1>
+
+<hr />
+
+<form asp-action="Edit" method="post">
+    <div class="form-row d-flex justify-content-between pb-2">
+        <div class="form-group col-md-5">
+            <label asp-for="FirstName" class="control-label"></label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-5">
+            <label asp-for="LastName" class="control-label"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between pb-3">
+        <div class="form-group col-md-5">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-5">
+            <label asp-for="PhoneNumber" class="control-label"></label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between pb-3">
+        <div class="form-group col-md-5">
+            <label asp-for="@Model.StudentAddress.AddressLineOne" class="control-label"></label>
+            <input asp-for="@Model.StudentAddress.AddressLineOne" class="form-control" />
+            <span asp-validation-for="@Model.StudentAddress.AddressLineOne" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-5">
+            <label asp-for="@Model.StudentAddress.AddressLineTwo" class="control-label"></label>
+            <input asp-for="@Model.StudentAddress.AddressLineTwo" class="form-control" />
+            <span asp-validation-for="@Model.StudentAddress.AddressLineTwo" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between pb-3">
+        <div class="form-group col-md-3">
+            <label asp-for="@Model.StudentAddress.City" class="control-label"></label>
+            <input asp-for="@Model.StudentAddress.City" class="form-control" />
+            <span asp-validation-for="@Model.StudentAddress.City" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-3">
+            <label asp-for="@Model.StudentAddress.Region" class="control-label"></label>
+            <input asp-for="@Model.StudentAddress.Region" class="form-control" />
+            <span asp-validation-for="@Model.StudentAddress.Region" class="text-danger"></span>
+        </div>
+        <div class="form-group col-md-3">
+            <label asp-for="@Model.StudentAddress.Country" class="control-label"></label>
+            <input asp-for="@Model.StudentAddress.Country" class="form-control" />
+            <span asp-validation-for="@Model.StudentAddress.Country" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-row d-flex justify-content-between pb-3">
+        <div class="form-group col-md-5">
+                <label  class="control-label">Courses</label>
+            <select data-placeholder="Choose a Course..." id="multiselect" asp-items="@ViewBag.list" class="select form-control" asp-for="SelectedItems" multiple tabindex="3">
+                </select>
+            </div>
+        
+        <div class="form-group col-md-5">
+            <label asp-for="@Model.StudentCourse.CourseDuration" class="control-label"></label>
+            <input asp-for="@Model.StudentCourse.CourseDuration" class="form-control" />
+            <span asp-validation-for="@Model.StudentCourse.CourseDuration" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group col-md-5 pb-5">
+        <label asp-for="DateCreated" class="control-label"></label>
+        <input asp-for="DateCreated" class="form-control" />
+        <span asp-validation-for="DateCreated" class="text-danger"></span>
+    </div>
+
+    <div class="form-row d-flex gap-3">
+        <div class="form-group">
+            <input type="submit" value="Edit" class="btn btn-outline-primary" />
+            <a asp-action="Index" class="btn btn-outline-danger">Back</a>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+
+            $("#multiselect").chosen({ no_results_text: "No results matched" });
+
+        });
+    </script>
+    @{  
+        await Html.RenderPartialAsync("chosen");
+    }
+}

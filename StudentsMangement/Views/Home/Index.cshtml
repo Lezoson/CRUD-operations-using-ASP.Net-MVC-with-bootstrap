@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="d-flex justify-content-center align-items-center container">
+    <div class="">
+        <h1 class="display-4">Welcome <span id="typed"></span></h1>
+
+
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("Typed");
+    }
+}

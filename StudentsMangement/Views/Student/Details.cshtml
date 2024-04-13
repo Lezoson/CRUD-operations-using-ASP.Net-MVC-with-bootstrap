@@ -1,0 +1,90 @@
+﻿@model StudentsMangement.Models.StudentDetails
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>StudentDetails</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentCourse.CourseName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentCourse.CourseName)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentCourse.CourseDuration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentCourse.CourseDuration)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentAddress.AddressLineOne)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentAddress.AddressLineOne)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentAddress.AddressLineTwo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentAddress.AddressLineTwo)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentAddress.City)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentAddress.City)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentAddress.Region)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentAddress.Region)
+        </dd>
+       <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentAddress.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StudentAddress.Country)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model?.StudentID">Edit</a> |
+    <a asp-action="Index" class="btn btn-success">Back to List</a>
+</div>
