@@ -10,11 +10,11 @@
 
 
 
-        <form asp-action="Create">
+        <form asp-action="Create" id="myForm" onsubmit="sendform(event)">
             <div class="form-row d-flex justify-content-between pb-2">
             <div class="form-group col-md-5">
                 <label asp-for="FirstName" class="control-label"></label>
-                <input asp-for="FirstName" class="form-control" />
+                <input asp-for="FirstName" class="form-control" required />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="form-group col-md-5">    
@@ -85,7 +85,7 @@
 
     <div class="form-row d-flex gap-3">
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-outline-primary" />
+                <input type="submit" value="Create" class="btn btn-outline-primary" onclick="display()" />
                 <a asp-action="Index" class="btn btn-outline-danger">Back</a>
             </div>
             </div>
@@ -105,10 +105,29 @@
             $("#multiselect").chosen({ no_results_text: "No results matched"});
 
         });
+        
     </script>
         @{
             await Html.RenderPartialAsync("chosen");
         }
+        <script>
+        function sendform(e) {
+            e.preventDefault();
+            Swal.fire(
+                {
+                    title: "Good job!",
+                    text: "Created Successfully!",
+                    icon: "success"
+                }).then(result => { 
+                    if(result.isConfirmed)
+                    {
+                        const myForm = document.getElementById("myForm");
+                        myForm.submit();
+                    }
+                })
+        }
+    </script>
+
 }
     
 

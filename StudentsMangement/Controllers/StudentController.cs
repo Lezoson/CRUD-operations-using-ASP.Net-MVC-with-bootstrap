@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using StudentsMangement.Models;
 
 namespace StudentsMangement.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private readonly StudentDBContext _context;
@@ -252,7 +254,7 @@ namespace StudentsMangement.Controllers
                 address.Country = alldetails.StudentAddress.Country;
                 _context.StudentAddress.Add(address);
                 await _context.SaveChangesAsync();
-
+                TempData["Success"] = "Created Successfully";
                 return RedirectToAction(nameof(Index));
             }
             return View(alldetails);
