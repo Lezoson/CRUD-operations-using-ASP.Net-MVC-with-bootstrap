@@ -118,13 +118,12 @@
                     title: "Good job!",
                     text: "Created Successfully!",
                     icon: "success"
-                }).then(result => { 
-                    if(result.isConfirmed)
-                    {
+                }).then(result => {
+                    if (result.isConfirmed) {
                         const myForm = document.getElementById("myForm");
                         myForm.submit();
                     }
-                })
+                });
         }
     </script>
 
